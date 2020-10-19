@@ -47,3 +47,32 @@ var media = function(n1,n2){  // A variável recebe uma função
 }
 
 console.log(media(10,20));
+
+console.log("-----------------------------------------------------------------")
+
+// EXERCÍCIO
+
+// Nome do aluno - nota 1 - nota 2 - média -Aprovado/Reprovado
+
+var nomes = ["Claudinei","José","Epaminondas","Milson"];  //Arrays
+var notasA = [7.0, 6.5, 9.5, 8.0];
+var notasB = [8.0, 7.0, 8.5, 5.5];
+
+function mediaTotal(n1,n2){  
+    return (n1 + n2)/2
+
+}
+function passou(media3){    //Funções
+        if(media3 >= 7){
+            return "Aprovado";
+        }else{
+            return "Reprovado";
+        }
+    } 
+
+for (var index in nomes){         //Estrutura de repetição
+    var nota1 = notasA[index];
+    var nota2 = notasB[index];
+    var media3 = mediaTotal(nota1,nota2);
+    console.log(`${nomes[index]}- ${nota1}- ${nota2} = ${media3} - ${passou(media3)}`);
+}
