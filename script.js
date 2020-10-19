@@ -76,3 +76,31 @@ for (var index in nomes){         //Estrutura de repetição
     var media3 = mediaTotal(nota1,nota2);
     console.log(`${nomes[index]}- ${nota1}- ${nota2} = ${media3} - ${passou(media3)}`);
 }
+
+console.log('_______________________________________________________________________________________________')
+
+
+// OBJETO
+
+// Relação entre uma chave e um valor
+ 
+var aluno = {nome:"Claudinei", nota:5.8,};
+
+console.log(aluno);
+
+var aluno2 = {nome:"Milson",notas:[29,4.0]};
+aluno2["sobrenome"]="Oliveira"; // Inserindo novas propriedades
+aluno2.matricula=1234           // Inserindo novas propriedades
+
+var serie = "sérieA";         // Inserindo novas propriedades
+
+aluno2[serie]="abcd"
+
+console.log(aluno2);
+
+
+var aluno3 = new Object();
+aluno3.nome = "nei";
+aluno3.notas = [2.1, 4.5]
+
+console.log(aluno3);
