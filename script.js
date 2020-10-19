@@ -1,3 +1,4 @@
+
 // FUNÇÕES
 function media(){  //Declarando a função
     var nota1 = 10;
@@ -6,7 +7,7 @@ function media(){  //Declarando a função
 
     console.log(media);
 }
-media();  // Chamando a função
+media();  // Chamando a função, obs: sempre com parênteses
 
 // PASSANDO ARGUMENTOS
 
@@ -29,3 +30,20 @@ function dividir(n1,n2){
 var resultado = dividir(10,2);
 
 console.log(resultado);
+
+
+function saudacao(){
+
+    return "Olá Mundo!";
+}
+
+var s = saudacao();
+console.log(s);
+
+// FUNÇÕES ANÔNIMAS
+
+var media = function(n1,n2){  // A variável recebe uma função
+    return (n1 + n2)/2;
+}
+
+console.log(media(10,20));
