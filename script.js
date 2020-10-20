@@ -178,3 +178,47 @@ function alunoA(nome,nota1,nota2){
 var alunos = new alunoA("Vanessa", 10, 5.5)
 
 console.log(alunos.nome);
+
+console.log("-------------------------------------------------------------------------")
+
+// RESUMO
+// Maneira Simples de criar o objeto
+
+var objeto = {                  // Quando se abre uma chave ja se cria um objeto
+    nome:"Claudinei",           // Propriedades separados por virgula
+    sobrenome:"Messias"
+
+}
+console.log(objeto);
+console.log(objeto.nome);
+console.log(typeof(objeto));
+
+console.log("-------------------------------------------------------------------------")
+
+// Criando um objeto através de uma função
+
+function obj(nome, sobrenome){
+    return {
+        nome:nome,
+        sobrenome:sobrenome,
+    }
+}
+
+var a = obj("Epaminondas", "da Silva");
+console.log(a);
+console.log(a.nome);
+console.log(typeof(a));
+
+console.log("----------------------------------------------------------------------------")
+
+// Outra maneira
+
+function ob(nome, sobrenome){     //Nessa maneira ela não retorna nada, para isso deve ser usado "new"
+    this.nome = nome,            // this = essa instância,  ela mesma
+    this.sobrenome = sobrenome
+}
+
+var b = new ob("Robson","Cleiton");
+console.log(b);
+console.log(b.nome);
+console.log(typeof(b));
