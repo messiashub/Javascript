@@ -89,10 +89,10 @@ var aluno = {nome:"Claudinei", nota:5.8,};
 console.log(aluno);
 
 var aluno2 = {nome:"Milson",notas:[29,4.0]};
-aluno2["sobrenome"]="Oliveira"; // Inserindo novas propriedades
-aluno2.matricula=1234           // Inserindo novas propriedades
+aluno2["sobrenome"]="Oliveira";           // Inserindo novas propriedades
+aluno2.matricula=1234                      // Inserindo novas propriedades
 
-var serie = "sérieA";         // Inserindo novas propriedades
+var serie = "sérieA";                    // Inserindo novas propriedades
 
 aluno2[serie]="abcd"
 
@@ -104,3 +104,27 @@ aluno3.nome = "nei";
 aluno3.notas = [2.1, 4.5]
 
 console.log(aluno3);
+console.log("------------------------------------------------------------------")
+
+
+
+// OBJETOS - MÉTODOS
+
+// MÉTODOS SÃO FUNÇÕES DENTRO DE OBJETOS
+
+
+function calcMedia(n1, n2){
+    return(this.notas[0] + this.notas[1])/2;
+}
+
+var aluno4 ={nome:"Claudio", notas:[10,8], media: calcMedia
+}
+ var aluno5 ={nome:"Claudionor", notas:[20,8], media: calcMedia
+} 
+
+console.log(aluno4.nome);     // Claudio
+console.log(aluno4.media());  // 9
+
+console.log(aluno5.nome);    // Claudionor
+console.log(aluno5.media()); // 14
+ 
