@@ -127,4 +127,54 @@ console.log(aluno4.media());  // 9
 
 console.log(aluno5.nome);    // Claudionor
 console.log(aluno5.media()); // 14
- 
+
+console.log("---------------------------------------------------------")
+
+
+// OBJETOS CONSTRUTORES
+
+function criarAluno(nome,nota1,nota2){
+    return {
+        nome:  nome,
+        nota1: nota1,
+        nota2: nota2,
+        media:function(){
+            return (this.nota1 + this.nota2)/2;
+        }
+
+    }
+}
+
+ var turma = [
+    criarAluno("claudinei",5.5, 5),
+    criarAluno("Igor",9, 7.5),
+    criarAluno("Diana", 10, 4, 5.5),
+    criarAluno("Milson", 11, 4, 5.5),    
+]
+
+var aluno6 = turma[3];
+/* var aluno6 = criarAluno(); */
+console.log(aluno6);
+console.log(aluno6.media()); //OBS: sempre usar parenteses para executar a função
+
+// Usando um for
+
+for(var aluno6 of turma){
+    console.log(`nome: ${aluno6.nome}, nota1:${aluno6.nota1}, nota2${aluno6.nota2}, media = ${aluno6.media()}`);
+}
+
+// Outra maneira
+
+function alunoA(nome,nota1,nota2){
+    this.nome = nome;
+    this.nota1 = nota1;
+    this.nota2 = nota2;
+
+    this.media = function(){
+        return (this.nota1 + nota2)/2;
+    }
+}
+
+var alunos = new alunoA("Vanessa", 10, 5.5)
+
+console.log(alunos.nome);
