@@ -222,3 +222,24 @@ var b = new ob("Robson","Cleiton");
 console.log(b);
 console.log(b.nome);
 console.log(typeof(b));
+
+console.log("---------------------------------------------------------------------------------------")
+
+// DATAS
+
+//Criando uma data
+
+var dia = new Date();
+console.log(dia);
+
+console.log("----------------------------------------------------------");
+
+// Const, Let e var
+
+var numero1 = 4;  //var = Global,  pode-se acessar em qualquer lugar do código
+let numero2 = 5;  // let = Local  pode ser acessada dentro do bloco do qual ela foi criada
+const numero3 = 6; // const = Constante, não pode ser reatribuída um novo  valor, só pode ser acessada dentro do bloco que foi criada
+
+console.log(numero1);
+console.log(numero2);
+console.log(numero3);
