@@ -1,0 +1,51 @@
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.todo{
+    width: 500px;
+    height: 500px;
+    border: 1px solid;
+    justify-content: center;
+    text-align: center;
+    
+    margin: auto;
+    background-color: aquamarine;
+}
+
+.todo p{
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.todo input{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.todo button{
+    font-size: 1.5em;
+}
+
+.res{
+    display: inline-block;    
+    justify-content: center; 
+    align-items: center;  
+    margin-top: 40px;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(20, 53, 54);
+  
+    
+}
+
+span{
+    font-size: 1em;
+    color: rgb(49, 189, 207);
+   
+}
+
+.res p{
+   
+    margin-top: 70px; 
+}
+
