@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+    <script>
+        let cont = 10;
+
+        while(cont>=0){
+            document.write(`${cont} -`);
+            cont--;
+        }
+
+        document.write('<hr><br>');
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="n1"/>
+        <button onclick="contar()">contar</button>
+        <button onclick="limpar()">limpar</button>
+    </div>
+    <br>
+    <div class="msg">
+       
+
+    </div>
+
+    <script>
+        let contador = 0
+
+        function contar(){
+            let n1 = parseInt(document.getElementById('n1').value);
+            let msg = document.getElementById('msg');
+            console.log(n1);
+
+            while(contador <= n1){
+                let span = document.createElement('span');
+                span.innerHTML= ` ${contador}`
+                contador++;
+
+                let div = document.querySelector('.msg')
+                document.body.insertBefore(span, div)
+            }
+
+        }
+        function limpar(){
+            if(n1.value != "" ){
+                n1.value = "";
+               
+            }
+            
+            
+        }
+    </script>
+    
+</body>
+</html>
