@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando</title>
+</head>
+<body>
+    <span id="msg"></span>
+    <script>
+        let contador = 1;
+        let soma = 0;
+        let maior = 0;
+        let menor= maior;
+
+        while(contador <= 5){
+            let valor = parseInt(prompt('Informe um valor'));
+
+            if(valor >= maior){
+                maior = valor
+            }
+            
+            soma =  soma + valor;
+            contador =contador+1;
+            console.log(valor, contador);
+        }
+        document.getElementById('msg').innerHTML= `${soma} maior ${maior}`;
+        console.log(soma)
+    </script>
+    
+</body>
+</html>
