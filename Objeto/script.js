@@ -37,3 +37,30 @@ let pessoa = {
 console.log(pessoa.dados());  //  O nome é Epaminondas da Silva com idade de 56 anos.
 
 
+// OUTROS EXEMPLOS
+
+let pessoa2 = {
+    nome: ['Claudinei', 'Messias'], // objeto recebendo array
+    idade: 47,
+    sexo: 'Masculino',
+    interesses: ['Programação', 'Musica', 'Filmes'],
+    bio: function () {                                 // Métodos
+        return `${this.nome[0]} ${this.nome[1]} tem ${this.idade} anos de idade. Ele gosta de ${this.interesses[0]}.`
+    },
+    saudacao: function () {
+        return `Olá eu sou ${this.nome[0]} ${this.nome[1]}`
+
+    }
+}
+pessoa2['olhos']= 'castanho';   // Colocando nova  propriedade no objeto
+
+console.log(pessoa2);
+console.log(pessoa2.nome[0]);
+console.log(pessoa2.nome[1]);
+console.log(pessoa2.interesses[2]);
+console.log(pessoa2.sexo);
+console.log(pessoa2.idade);
+console.log(pessoa2.bio());
+console.log(pessoa2.saudacao());
+console.log(pessoa2.olhos);
+
