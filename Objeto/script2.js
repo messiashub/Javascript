@@ -1,5 +1,4 @@
 
-
 // OBJETO ->  Permite armazenar uma coleção de pares e valor,  é como se fosse  variáveis dentro de uma  variável
 
 let usuario = {
@@ -59,3 +58,66 @@ let usuario3 = {
 console.log(usuario3);
 
 console.log("-----------------------------------------")
+
+
+// Unindo  dois objetos (Merge)
+
+let usuario4 = {
+    nome: 'Claudio',
+    idade: 47,
+}
+
+let extraInfo = {
+    país:"Brasil",
+    estado: "São Paulo",
+}
+
+let novoUsuario = Object.assign({},usuario4,extraInfo);  // Gera um novo objeto
+console.log(novoUsuario);
+
+// Outra forma  -> spread ... : espalhar  
+
+let novoUsuario2 ={
+    ...usuario4,
+    ...extraInfo,
+    sexo:"Masculino",
+    profissao:'Programador'
+}
+console.log(novoUsuario2);
+
+console.log('-----------------------------------------');
+
+// GETTERS e SETTERS
+
+let usuarios = [   //  Array contendo 4 objetos
+    {nome:"Adilson",idade: 50 },
+    {nome:"Rose",idade: 45},
+    {nome:"Eliete",idade:46}   
+];
+console.log(usuarios[2].idade);
+
+let pessoas = {
+    posicao : 0,
+    get atual(){              // get: retorna o valor
+        return usuarios[this.posicao];
+    },
+    set atual(posicao){              // set: é para colocar valores
+        this.posicao = this.posicao;
+    },
+    proximo(){   // FUNÇÃO COMO PROPRIEDADE
+        ++this.posicao;   // this> é o próprio objeto
+    },
+    anterior(){   //  OUTRA FUNÇÃO
+        --this.posicao;
+    },
+    
+}
+console.log(pessoas.atual);
+pessoas.proximo();
+console.log(pessoas.atual);
+pessoas.proximo();
+console.log(pessoas.atual);
+pessoas.anterior();
+console.log(pessoas.atual);
+pessoas.atual=(0);
+console.log(pessoas.atual);
