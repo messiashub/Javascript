@@ -63,13 +63,36 @@ console.log("----------------------")
 
 let total = 0;
 
-function somar(n){
-   total += n;
-   return (total);
+function somar(n) {
+    total += n;
+    return (total);
 }
 
-let resul = numeros.forEach(somar);
-console.log(resul);
+numeros.forEach(somar);
+console.log(total);
+
+console.log("------------------");
+
+let numeros2 = [2, 4, 7, 1];
+let total1 = 0;
+
+for (let n = 0; n < numeros2.length; n++) {  // FUNÇÃO PARA SOMAR VALORES
+    total1 += numeros2[n];
+
+}
+console.log(total1);
+
+console.log("-------------------------")
+
+let tarefas = ['acordar cedo', 'tomar banho', 'escovar os dentes', 'tomar café', 'sair', 'mercado', 'comprar coisas'];
+
+function mostrar(indice, valor) {
+    /* console.log(`${valor + 1} - ${indice}`); */
+    console.log(`${valor + 1} - ${indice}`);
+};
+
+tarefas.forEach(mostrar);
+
 
 
 
