@@ -54,6 +54,8 @@ console.log("=========================");
 
 // REDUCE 
 
+// APLICANDO EM OBJETOS -> SOMANDO
+
 const foguetes = [
     { pais: "Russia", lancamentos: 32 },
     { pais: "EUA", lancamentos: 22 },
@@ -107,4 +109,40 @@ console.log(nu2);
 
 let numA = [3, 5, 6, 10].reduce((aC, vA) => aC + vA, 0);
 
-console.log(numA)
+console.log(numA);
+console.log("------------------")
+
+// CONTANDO  VALORES IGUAIS EM UM OBJETO 
+let nomes4 = ['Alice', 'Bartolomeu', 'Epaminondas', 'Claudinei', 'Claudio', 'Alice', 'Bartolomeu', 'Alice'];
+
+let quantidade = nomes4.reduce(function (atual1, p) {
+    if (p in atual1) {  // O operador in retorna  true se a propriedade especificada estiver no objeto especificado.
+        atual1[p] = atual1[p] + 1;
+    } else {
+        atual1[p] = 1;
+    }
+    return atual1;
+}, {});
+console.log(quantidade);
+
+// USANDO TODOS OS MÉTODOS JUNTOS
+
+let funcionarios = [
+    { nome: 'Clauderson', departamento: 'financeiro', salario: 1500 },
+    { nome: 'Rita', departamento: 'financeiro', salario: 1200 },
+    { nome: 'Ben', departamento: 'marketing', salario: 2000 },
+    { nome: 'Rudy', departamento: 'marketing', salario: 1750 },
+    { nome: 'Hipólita', departamento: 'financeiro', salario: 1000 },
+];
+
+// 1 filtra o departamento financeiro  (FILTER)
+// 2 financeiro recebe 50%             (MAP)
+// 3 Somar os valores                  (REDUCE)
+
+
+let financeiro = funcionarios
+.filter((fun, index)=> fun.departamento === 'financeiro') 
+.map(salario => salario.salario *= 1.5)
+.reduce((total, valor) => total + valor); 
+ 
+console.log(financeiro)
