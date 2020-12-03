@@ -28,13 +28,13 @@ let cidades = [
 ];
 
 let grandeCidades = cidades.filter(x => x.populacao > 3000000000);
-let nome2 =grandeCidades.forEach(x => console.log(`${x.nome}: ${x.populacao}`));
+let nome2 = grandeCidades.forEach(x => console.log(`${x.nome}: ${x.populacao}`));
 
 console.log(grandeCidades);
 
 // FILTRANDO NUMEROS PARES E DOBRANDO USANDO MAP
 
-let numerosP = [1,4,6,7,10,13,14,19,20,21];
+let numerosP = [1, 4, 6, 7, 10, 13, 14, 19, 20, 21];
 
 let numerosPar = numerosP.filter(x => x % 2 == 0).map(x => x * 2);
 
@@ -44,13 +44,67 @@ console.log("=============================================")
 
 // FILTRANDO STRING PELA LETRA INICIAL
 
-let nome =[ 'claudinei','Marcia','Néia','Silvano','claudio','silvia','claudinéia'];
+let nome = ['claudinei', 'Marcia', 'Néia', 'Silvano', 'claudio', 'silvia', 'claudinéia'];
 
-let nomeC = nome.filter(x => x.charAt()==='c');
+let nomeC = nome.filter(x => x.charAt() === 'c');
 
 console.log(nomeC);
 
 console.log("=========================");
 
+// REDUCE 
 
+const foguetes = [
+    { pais: "Russia", lancamentos: 32 },
+    { pais: "EUA", lancamentos: 22 },
+    { pais: "Japão", lancamentos: 12 },
+    { pais: "Brasil", lancamentos: 2 }
+];
 
+const totalLan = foguetes.reduce(function (total, atual) {
+    return total + atual.lancamentos;
+}, 0);
+
+console.log(totalLan);
+
+console.log("-----------------------------------------")
+
+// O método reduce() executa uma função reducer (fornecida por você) para cada elemento do array, resultando num único valor de retorno.
+// O método reduce() executa a função de callback uma vez para cada elemento presente no array, excluindo furos (valores indefinidos), recebendo quatro argumentos:
+/*1 acumulador - valor inicial (ou o valor do callback anterior),
+  2 valorAtual - o valor do elemento atual
+  3 index - o índice atual e
+  4 array - o array onde a iteração está ocorrendo.
+*/
+
+let num = [1, 2, 5, 7];
+
+function somar(a, b) {   // FUNÇÃO FORNECIDA  POR VOCÊ
+    return a + b;
+};
+
+let somado = num.reduce(somar, 0);  // Sempre colocar um valor  inicial 
+console.log(somado);
+
+// USANDO UMA FUNÇÃO DE CALLBACK
+let nA = [5, 6, 8, 0, 2];
+
+let nB = nA.reduce(function (ac, va) {
+    return ac + va;
+}, 0);  //  // Sempre colocar um valor  inicial 
+
+console.log(nB);
+
+// USANDO UMA ARROW FUNCTION
+
+let nu1 = [2, 5, 8, 10];
+
+let nu2 = nu1.reduce((acomulador, item) => acomulador + item, 0);  // acomulador = valor inicial, item o elemento dentro do array
+
+console.log(nu2);
+
+// VARIÁVEL RECEBENDO O ARRAY  JA COM  O REDUCE
+
+let numA = [3, 5, 6, 10].reduce((aC, vA) => aC + vA, 0);
+
+console.log(numA)
