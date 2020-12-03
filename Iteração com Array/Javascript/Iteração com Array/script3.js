@@ -29,10 +29,28 @@ let cidades = [
 
 let grandeCidades = cidades.filter(x => x.populacao > 3000000000);
 let nome2 =grandeCidades.forEach(x => console.log(`${x.nome}: ${x.populacao}`));
-   
-
 
 console.log(grandeCidades);
+
+// FILTRANDO NUMEROS PARES E DOBRANDO USANDO MAP
+
+let numerosP = [1,4,6,7,10,13,14,19,20,21];
+
+let numerosPar = numerosP.filter(x => x % 2 == 0).map(x => x * 2);
+
+console.log(numerosPar);
+
+console.log("=============================================")
+
+// FILTRANDO STRING PELA LETRA INICIAL
+
+let nome =[ 'claudinei','Marcia','Néia','Silvano','claudio','silvia','claudinéia'];
+
+let nomeC = nome.filter(x => x.charAt()==='c');
+
+console.log(nomeC);
+
+console.log("=========================");
 
 
 
