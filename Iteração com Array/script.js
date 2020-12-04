@@ -93,6 +93,19 @@ function mostrar(indice, valor) {
 
 tarefas.forEach(mostrar);
 
+console.log("---------------------------");
+
+let pedidos = [
+    {id:420, nome:'Dener', alimento:'Sandubão de Bacon',bebida:'Suco de Limão'},
+    {id:420, nome:'Claudinei', alimento:'Sandubão de Vegano',bebida:'Suco de Laranja'},
+    {id:420, nome:'Isabel', alimento:'Coxinha',bebida:'Suco de Uva'},
+    {id:420, nome:'José', alimento:'Pizza',bebida:'Refrigerante'}
+];
+
+pedidos.forEach((pedido,index)=>{
+    let  {nome , alimento, bebida}= pedido;  // COLOCANDO AS PROPRIEDADES NUMA VARIÁVEL
+    console.log(`${index + 1} O cliente ${nome} fez o pedido do alimento: ${alimento} e a bebida: ${bebida}`);
+})
 
 
 
