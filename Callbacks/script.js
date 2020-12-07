@@ -30,6 +30,19 @@ function calcular(a,b, some){
     some(calc);
 }
 
-calcular(5,5,minhaConta)
+calcular(5,5,minhaConta);
+
+
+// setTimeout e setInterval
+
+setTimeout(teste,4000);
+
+function teste(){
+    console.log('teste 1');
+};
+
+setTimeout(function(){
+   console.log('teste 0')
+},2000);
 
 
