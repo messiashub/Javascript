@@ -19,3 +19,17 @@ let rua = document.querySelector(".address").innerHTML=`Rua Bento Teixeira n°${
 // OBTENDO O VALOR  DA DIV COM "innerHTML"
 let div = document.querySelector("#dv").innerHTML;
 console.log(div);
+
+////////////////////////////////////
+
+let btn =document.querySelector('.btn').addEventListener('click',minhaFuncao);
+
+function minhaFuncao(){
+    let valor = document.querySelector('#caixa2').value;
+    document.querySelector('.res').innerHTML = `repetindo: ${valor.toUpperCase()}`;
+
+}
+
+
+
+
