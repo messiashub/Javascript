@@ -2,7 +2,12 @@
 /* innerHTML => PODE-SE OBTER OU MODIFICAR O VALOR DAS PROPRIEDADES
 DE UM ELEMENTO*/
 
+/*  INSERE HTML E TEXTO */
+
 // EX 1:
+
+// INSERINDO HTML E  TEXTO NA PAGINA
+let h2 = document.querySelector('.html').innerHTML = '<h2>Inserindo html</h2>'
 
 // MODIFICANDO O VALOR DO ELEMENTO 'input' COM 'value'
 let cx = document.querySelector('#caixa').value='messias'; 
@@ -19,7 +24,6 @@ let rua = document.querySelector(".address").innerHTML=`Rua Bento Teixeira n°${
 // OBTENDO O VALOR  DA DIV COM "innerHTML"
 let div = document.querySelector("#dv").innerHTML;
 console.log(div);
-
 ////////////////////////////////////
 
 let btn =document.querySelector('.btn').addEventListener('click',minhaFuncao);
