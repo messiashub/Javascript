@@ -1,9 +1,16 @@
 
-let pessoa ={
+/* let pessoa ={
     idade: 49,
     nome: "Claudinei",
+    sobrenome:"Messias",
     altura:1.85,
-    casado: false
+    casado: false,
+    aniversario: function(){
+        pessoa.idade++;
+    },
+    nomeComSobrenome:()=>{
+        console.log(`${pessoa.nome} ${pessoa.sobrenome}`)
+    }
 }
 
 function apresentar(){
@@ -16,7 +23,25 @@ function apresentar(){
     }else{
         console.log('De boa!')
     }
-
 }
 
 apresentar();
+pessoa.aniversario();
+pessoa.aniversario();
+console.log(pessoa);
+
+pessoa.nomeComSobrenome();
+ */
+
+let num = "nei";
+function Teste(){
+    if(num){
+        booleano = true;
+        console.log(booleano);
+    }else{
+        booleano = false;
+        console.log(booleano);
+    }
+};
+
+Teste();
