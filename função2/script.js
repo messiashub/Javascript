@@ -174,6 +174,45 @@ techs.pop();
 techs.shift();
 console.log(techs);
 
+for(let i = 0 ; i<= 20;i++){
+    i % 2 === 0 ? console.log(i):"";
+}
+
+console.log('////')
+
+let arr = ["claudio",'milson','epaminondas',{nome:'claudinei',idade:49,sexo:"masculino"}];
+
+let quant = arr.length;
+console.log(quant);
+
+for(let i = 1;i<=quant;i++){
+
+    i === 2? console.log(arr[i]):"";
+    /* console.log(i); */
+}
 
 
+let arr2 = ["Epaminondas","Claudio","Sergio", 1, 2, 50];
 
+function atualiza(){
+    arr2.push(["Um","Dois","Tres"]);
+    return arr2[6];
+}
+console.log(atualiza())
+
+let metodo = {name:"Claudinei", função: function(x,y){
+    return x + y;
+}}
+
+console.log(metodo.função(9,1));
+
+
+let nome = "Claudinei";
+let numero = 3;
+let ar = [];
+let obj = {};
+
+document.write(`<p> ${typeof nome}</p>`);
+document.write(`<p> ${typeof numero}</p>`);
+document.write(`<p> ${typeof ar}</p>`);
+document.write(`<p> ${typeof obj}</p>`);
