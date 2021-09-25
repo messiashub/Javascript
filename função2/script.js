@@ -141,7 +141,7 @@ sayMyName('nei'); */
     * this keyword
  */
 
-function Person(name,idade){
+/* function Person(name,idade){
     this.name = name;
     this.walk = ()=>` ${this.name} está andando!`;
     this.idade = ()=> `${this.name} tem ${idade} anos`;
@@ -152,6 +152,28 @@ const Claudinei = new Person('claudinei',45);
 const Claudio = new Person('claudio')
 
 console.log(Claudinei.idade());
-console.log(Claudio.walk());
+console.log(Claudio.walk()); */
 
 /* console.log(claudinei) */
+
+
+// MANIPULANDO ARRAYS
+
+let techs = ["html", "css","js"];
+
+// adicionar um item no fim
+techs.push("node.js");
+
+// adicionar no começo do array
+techs.unshift('bootstrap');
+
+// remover do fim
+techs.pop();
+
+// remover do começo
+techs.shift();
+console.log(techs);
+
+
+
+
