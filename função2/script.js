@@ -216,3 +216,21 @@ document.write(`<p> ${typeof nome}</p>`);
 document.write(`<p> ${typeof numero}</p>`);
 document.write(`<p> ${typeof ar}</p>`);
 document.write(`<p> ${typeof obj}</p>`);
+
+
+let idade = 18;
+
+let deMaior = idade >=18 ? console.log('pode entrar!'): console.log('não entra!');
+
+let temperatura = 37.6;
+let altaTemperatura = temperatura >= 37.5;
+let mediaTemperatura = temperatura < 37.5 && temperatura >= 37.5;
+
+if(altaTemperatura){
+    console.log("Febre Alta");
+
+}else if(mediaTemperatura){
+    console.log("Febre Moderada");
+}else{
+    console.log("Saudável")
+}
