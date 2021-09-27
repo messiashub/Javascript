@@ -87,7 +87,7 @@ for(let name of names){
 
 //  FOR IN   vai criar um looping em cima de um objeto, pegando as suas propriedades
 
-let person ={
+/* let person ={
     name:"Claudinei",
     sobrenome:"Messias",
     idade:48,
@@ -96,4 +96,46 @@ let person ={
 
 for(let property in person){  // pegando as propridades e valores do objeto
     console.log(`${property} : ${person[property]}`);
+} */
+
+/* 1 CRIE UM ALGORITMO QUE TRANSFORMA  AS NOTAS DO SISTEMA NUMÉRICO PARA SISTEMA
+ DE NOTAS EM CARACTERES TIPO A,B E C */
+/* 
+* de 90 para cima - A
+* entre 80 - 89   - B
+* entre 70 - 79   - C
+* entre 60 - 69   - D
+* menor que 60    - F
+   
+*/
+
+/* let note; */
+
+function nota(note){
+    if(note >= 90 && note <= 100){
+        console.log("A");   
+    }if(note >= 80 && note <= 89){
+        console.log("B");  
+    }if(note >= 70 && note <= 79){
+        console.log('C');  
+    }if(note >= 60 && note <= 69){
+        console.log('D');  
+    }else if(note < 60 && note >= 0){
+        console.log("F")
+    }else if(note < 0 || note > 100){
+        console.log("invalida");
+    }   
 }
+
+nota(101);
+nota(-1);
+nota(0);
+nota(1);
+nota(45);
+nota(60);
+nota(61);
+nota(75);
+nota(85);
+nota(95);
+
+
