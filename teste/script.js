@@ -111,6 +111,46 @@ for(let property in person){  // pegando as propridades e valores do objeto
 
 /* let note; */
 
+let valor = document.querySelector('.value');
+let btn = document.querySelector('.btn');
+let resposta = document.querySelector('.respfinal');
+let btn2 = document.querySelector('.btn2');
+
+
+btn2.addEventListener("click",function(){
+    valor.value = "";
+    resposta.innerHTML = "";
+
+});
+
+btn.addEventListener("click",function(){
+    /* resposta.innerHTML = parseInt(valor.value); */
+
+    if(valor.value >= 90 && valor.value <=100){
+        resposta.style.color="blue";
+        resposta.innerHTML = "A";
+
+    }if(valor.value >= 80 && valor.value <= 89){
+        resposta.style.color="green";
+        resposta.innerHTML = "B";
+    }if(valor.value >= 70 && valor.value <= 79){
+        resposta.style.color="yellow";
+        resposta.innerHTML = "C";
+    }if(valor.value >= 60 && valor.value <= 69){
+        resposta.style.color="orange ";
+        resposta.innerHTML = "D";
+    }if(valor.value < 60 &&  valor.value >= 0){
+        resposta.style.color="pink";
+        resposta.innerHTML= "F";
+    }else if(valor.value < 0 || valor.value > 100){
+        resposta.style.color="red";
+        resposta.innerHTML= "número invalido"
+    }
+    
+})
+
+
+
 function nota(note){
     if(note >= 90 && note <= 100){
         console.log("A");   
@@ -124,7 +164,8 @@ function nota(note){
         console.log("F")
     }else if(note < 0 || note > 100){
         console.log("invalida");
-    }   
+    }
+
 }
 
 nota(101);

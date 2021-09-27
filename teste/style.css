@@ -1,0 +1,23 @@
+
+h1,p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.width{
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid rgb(0, 204, 255);
+    border-radius: 10px;
+    box-shadow: 3px 4px 3px #16161669;
+}
+.value{
+    margin: 10px;
+}
+.btn{
+    margin: 10px;
+}
+.res{
+    margin: 10px;
+}
