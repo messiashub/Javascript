@@ -193,7 +193,6 @@ seguido do valor do saldo
 let family = {
     incomes : [2200, 3200, 250.43, 360.45],
     expenses : [320, 128.45, 176.87, 1450.00,2000]
-
 }
 
 function sum(array){
@@ -202,9 +201,7 @@ function sum(array){
         total += value;       
     }
     return total
-
 }
-
 
 function calculateBalance(){
     let calcuteIncomes = sum(family.incomes);
@@ -224,3 +221,51 @@ function calculateBalance(){
 
 calculateBalance();
 
+// CELSIUS  EM FAHRENHEIT
+/* Crie uma função que  receba uma string  em celsius ou fahrenheit e faça a transformação de uma unidade para outra
+
+C = (F- 32) * 5/9 
+F = C * 9/5 + 32
+
+*/
+
+// transformDegree('50F)
+
+function transformDegree(degree){
+    const celciusExists = degree.toUpperCase().includes("C");
+    const fahrenheitExists = degree.toUpperCase().includes("F")
+
+
+
+    // fluxo de erro
+    if(!celciusExists && !fahrenheitExists){
+        throw new Error('Grau não identificado')
+    }
+
+    // fluxo ideal, F para C
+
+    
+    let updatedDegree = Number(degree.toUpperCase().replace("F",""))
+    let formula =(fahrenheit)=>(fahrenheit - 32) * 5/9;
+    let degreeSign = "C";
+
+    // fluxo alternativo C para F
+    if(celciusExists){
+        updatedDegree = Number(degree.toUpperCase().replace("C",""))
+        formula =(celsius)=> celsius * 9/5 + 32;
+        degreeSign = "F";
+    }
+
+    return formula(updatedDegree) + degreeSign
+
+}
+try{
+   /*  console.log(transformDegree("50F")); */
+    
+    console.log(transformDegree("10C"));
+    console.log(transformDegree("50F"));
+    transformDegree("50Z")
+
+}catch(error){
+    console.log(error);
+}
