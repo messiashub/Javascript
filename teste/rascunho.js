@@ -40,3 +40,33 @@ function somar(array){
 }
 
 console.log(somar(qualquer2.n));
+
+
+let pessoa ={
+    pessoas:["claudinei","Eliete","Jair","Milson","Marcelo","Samuel","Edila",],
+    numbers:[12,4,67,8,90,20]
+};
+
+console.log(pessoa.pessoas.includes("Eliete"));
+console.log(pessoa.numbers.includes(12));
+console.log(typeof pessoa);
+
+let people = [
+    {nome:"claudinei",age:49, group: "Desenvolverdor"},
+    {nome:"Eliete", age:48, group:"Professora"},
+    {nome:"Edila", age:35, group:"Balconista"}
+]
+
+console.log(typeof people);
+console.log(people[2].group);
+let filtro = people.filter(function(p){
+    return p.group.includes("Professora");
+});
+
+console.log(filtro);
+
+let name = people.filter(function(p){
+    return p.group !== "Balconista"
+})
+
+console.log(name);
