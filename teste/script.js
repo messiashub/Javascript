@@ -180,3 +180,47 @@ nota(85);
 nota(95);
 
 
+/* ### Sistema de gasto familiar
+
+Crie um objeto que possuíra 2 propriedades, ambas do tipo array:
+    * receitas:[];
+    * despesas:[];
+Agora crie uma função que irá calcular o total de receitas e despesas
+e irá mostra uma mensagem se a familia está com saldo positivo ou negativo,
+seguido do valor do saldo
+ */
+
+let family = {
+    incomes : [2200, 3200, 250.43, 360.45],
+    expenses : [320, 128.45, 176.87, 1450.00,2000]
+
+}
+
+function sum(array){
+    let total = 0;
+    for(let value of array){
+        total += value;       
+    }
+    return total
+
+}
+
+
+function calculateBalance(){
+    let calcuteIncomes = sum(family.incomes);
+    let calculateExpenses = sum(family.expenses);
+
+    let total = calcuteIncomes - calculateExpenses;
+
+    const itsOk = total >= 0;
+
+    let balanceText = "negativo"
+
+    if(itsOk){
+        balanceText = "positivo";
+    }
+    console.log(`Seu saldo é ${balanceText}: R$:${total.toFixed(2)}`)
+}
+
+calculateBalance();
+
