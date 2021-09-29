@@ -70,3 +70,114 @@ let name = people.filter(function(p){
 })
 
 console.log(name);
+
+console.log('------------------------------')
+
+const livrosCategoria = [
+    {
+        category: "Riqueza",
+        books: [
+            {
+                title: "Os segredos da mente milionária",
+                author: "T. Harv Eker",
+            },
+            {
+                title: "O homem mais rico da Babilônia",
+                author: "George S. Clason",
+            },
+            {
+                title: "Pai rico, pai pobre",
+                author: "Robert T. Kiyosaki e Sharon L. Lechter",
+            },
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [
+            {
+                title: "Você é Insubstituível",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Ansiedade – Como enfrentar o mal do século",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Os 7 hábitos das pessoas altamente eficazes",
+                author: "Stephen R. Covey",
+            },
+        ],
+    },
+];
+
+/* Contar o número de categorias */
+console.log(livrosCategoria.length);
+
+/*Contar número de livros em cada categoria  */  
+
+function contarLivros(){
+    for(let livros of livrosCategoria){
+        console.log(`Categoria ${livros.category} possui ${livros.books.length} livros`);
+        /* console.log(livros.books.length); */
+    }
+}
+console.log('----------------')
+/* Contar o número de autores */
+function contarAutor(){
+    let autor = [];
+    for(let categoria of livrosCategoria){
+        for(let livros of categoria.books){
+            if(autor.indexOf(livros.author)==-1){
+                autor.push(livros.author);
+            }          
+        }     
+    }
+    console.log(autor);   
+}
+console.log('----------------')
+
+/* Mostrar livros do autor Auguto Cury */
+
+function mostrarLivrosAugustoCury(){
+    let autorCaixa = [];
+    for(let autor of livrosCategoria){
+        for(let livro of  autor.books){
+            if(livro.author === "Augusto Cury"){
+                autorCaixa.push(livro.title);
+
+            }
+        }
+    }
+    console.log(autorCaixa);
+}
+
+/* Função acima em uma função que irá receber o nome do autor e devolver os livros desse autor. */
+
+function showBooks(author){
+    let box = [];
+    for(let categoria of livrosCategoria){
+        for(let autor of categoria.books){
+            if(autor.author === author){
+                box.push(autor.title)
+
+            }
+        }
+       /*  console.log(categoria); */
+    }
+    console.log(box)
+}
+
+
+/*Contar número de livros em cada categoria  */  
+contarLivros();
+console.log('------------------------------');
+
+/* Contar o número de autores */
+contarAutor();
+console.log('------------------------------');
+
+/* Mostrar livros do autor Auguto Cury */
+mostrarLivrosAugustoCury();
+console.log('------------------------------');
+
+showBooks('Robert T. Kiyosaki e Sharon L. Lechter');
