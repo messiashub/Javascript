@@ -72,10 +72,47 @@
         /* */
         /* console.log(autores.books.author); */
     }
+
+    contarAutor();
+
+    console.log('-------------------------------------------------------------');
+
     /* Mostrar livros do autor Auguto Cury */
 
-contarAutor();
+    function mostrarAC(){
+        let aC = [];
+        for(let books of livrosCategoria){
+            for(let book of books.books){
+                if(book.author == 'Augusto Cury'){
+                    aC.push(book.title);
+                }
+                
+            }
+        }
+        console.log(aC);
+    }
 
+    mostrarAC();
+
+    console.log('------------------');
+
+    /* função que irá receber o nome do autor e devolver os livros desse autor */
+
+    function nomeAutor(author){
+        let author1 = [];
+
+        for(let names of livrosCategoria){
+            for(let name of names.books){
+                if(name.author == author){
+                    author1.push(name.title);
+                }      
+            }   
+        } console.log(`O autor ${author} possui ${author1.length} livro(s)`);
+          console.log(author1);
+        
+    }
+
+    nomeAutor('Robert T. Kiyosaki e Sharon L. Lechter');
     </script>
 </body>
 </html>
