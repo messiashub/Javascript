@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>ACESSANDO OBJETOS</h1>
+
+    <script>
+        
+    const livrosCategoria = [
+        {
+            category: "Riqueza",
+            books: [
+                {
+                    title: "Os segredos da mente milionária",
+                    author: "T. Harv Eker",
+                },
+                {
+                    title: "O homem mais rico da Babilônia",
+                    author: "George S. Clason",
+                },
+                {
+                    title: "Pai rico, pai pobre",
+                    author: "Robert T. Kiyosaki e Sharon L. Lechter",
+                },
+            ],
+        },
+        {
+            category: "Inteligência Emocional",
+            books: [
+                {
+                    title: "Você é Insubstituível",
+                    author: "Augusto Cury",
+                },
+                {
+                    title: "Ansiedade – Como enfrentar o mal do século",
+                    author: "Augusto Cury",
+                },
+                {
+                    title: "Os 7 hábitos das pessoas altamente eficazes",
+                    author: "Stephen R. Covey",
+                },
+            ],
+        },
+    ];
+    /* Contar o número de categorias */
+    console.log(livrosCategoria);
+
+    /*Contar número de livros em cada categoria  */ 
+    for(let books of livrosCategoria){  
+        console.log(`Categoria ${books.category} possui ${books.books.length} livros`);
+    } 
+    console.log('----------------------------------------');
+
+    /* Contar o número de autores */
+
+    function contarAutor(){
+        let authorNumber = [];
+        for(let autores of livrosCategoria){       
+            for(let autor of autores.books){
+                if(authorNumber.indexOf(autor.author)==-1){
+                    authorNumber.push(autor.author);
+                }     
+            }
+        }
+        console.log(`${authorNumber.length} autores, são eles:${authorNumber}`);
+        /* */
+        /* console.log(autores.books.author); */
+    }
+    /* Mostrar livros do autor Auguto Cury */
+
+contarAutor();
+
+    </script>
+</body>
+</html>
