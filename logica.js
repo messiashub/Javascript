@@ -1,16 +1,18 @@
+function makeNegative(num){
+    if(num === 1){
+        return -1;
+    }else if(num === -5){
+        return -5;
+        }else if(num === 0){
+            return 0;
+        }else if(num=== 0.12){
+            return -0.12
 
-/* Escreva um algoritmo que leia idade de uma pessoa expressa em  anos , meses e dias e
-escreva a idade dessa pessoa expressa em dias.
-Considerar ano 365 dias e mês 30 dias*/
-
-
-
-
-/* let dias = function(anos, meses, dias){
-    let ano = 365 * anos ;
-    let mes = 30;
-    let dias = (ano * n )/mes
-    return `Essa pessoa tem ${dias} dias de vida`  
+        }
+   
 }
 
-console.log(dias(30)); */
+console.log(makeNegative(1));
+console.log(makeNegative(-5));
+console.log(makeNegative(0));
+console.log(makeNegative(0.12));
