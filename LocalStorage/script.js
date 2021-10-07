@@ -8,12 +8,10 @@ RemoveItem: para remover o elemento armazenado*/
 
 
 // COLETANDO DADOS DO VISITANTE
-
 let vcorF;
 let vcorT;
 let vNome;
-let show = document.querySelector("#fconfig");
-
+let show = document.querySelector("#fconfig");/* 1 */
 
 if(localStorage.nome){
     vcorF= localStorage.corFundo;
@@ -21,16 +19,14 @@ if(localStorage.nome){
     vNome = localStorage.nome;
     defineCor(1,vcorF);
     defineCor(2,vcorT);
-    document.querySelector("#painel").innerHTML = `Bem vindo ${vNome} <hr>` ;
-
-   
+    document.querySelector("#painel").innerHTML = `Bem vindo(a) ${vNome} <hr>` ;  
 }
  function gravar(){
     vNome = document.querySelector("#fnome").value;
     localStorage.setItem("nome", vNome);
     localStorage.corFundo = vcorF;
     localStorage.corTexto = vcorT;
-    show.style.display="none";
+    show.style.display="none"; /* vai ocultar assim que gravar o formulario */
     console.log(vNome);
  }
 
@@ -47,11 +43,9 @@ function defineCor(op,cor){
     }
 }
 
+/*Vai mostrar o formulario */
 function configura(){ 
     show.style.display="block"
-    console.log("oi")
-
-
 }
 
 
