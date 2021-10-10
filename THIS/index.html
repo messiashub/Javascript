@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // this é uma referência para o proprio objeto
+        // this = este
+        // Usamos this quando queremos acessar atributos ou métodos do próprio objeto
+
+        /* 1 Chamar o this diretamente no console nos traz o objeto global do contexto em que o javascript está executando.
+           O "this" no devtools do chrome nos traz o objeto "window", no Node nos traz o objeto global*/
+        console.log(this)
+        /* ------------------------------------------------------------------------ */
+
+        // 2 Quando não estiver no modo estrito o "this"  apontará para o objeto global
+        function thisNaoestrito(){
+            console.log(this);
+        }
+        thisNaoestrito();
+        /* --------------------------------------------------------------------------------- */
+
+        /* 3 Em modo estrito, o valor do "this" permanece seja qual for o definido ao entrar no contexto da execução, assim, no
+        caso a seguir, "this" por padrão será indefinido (undefined)
+          O "this" em modo estrito não vai apontar para  global e sim  para o objeto em sí */
+
+        function thisEstrito(){
+           "use strict"; console.log(this);
+        }
+
+        thisEstrito();
+
+        /* --------------------------------------------------------------------------------- */
+
+        // 4 Como método de um objeto
+
+        let pedro = {nome:"Pedro", saudação:function(){
+            return `Olá eu sou o ${this.nome}`; /* Qual nome? este nome */
+        }}
+        console.log(pedro.saudação()); 
+
+        pedro.nome = "claudinei";
+
+        console.log(pedro.saudação());
+        console.log("--------")
+
+        // outro exemplo
+
+        let $pessoa = {nome:"Nei",idade: 49, falar: function(){
+            console.log(`Olá tudo bem?`);
+        },dizerNome: function(){
+            console.log(`O meu nome é ${this.nome}`)
+        }, aniversario: function(){
+            this.idade += 1;
+        }}
+
+        console.log($pessoa.idade);
+        $pessoa.aniversario();
+        console.log($pessoa.idade)
+        
+        
+
+        
+    </script>
+    
+</body>
+</html>
