@@ -7,16 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Dataset</h1>
+    <h1>Treinando Eventos</h1>
 
-    <p id="nome" data-apelido = "nei" data-idade = "48" data-nasc="1973">Claudinei Messias</p>
+    <button  id=btn>Clique em mim</button>
+    <p id="resp"></p>
 
     <script>
-        let nome = document.querySelector("#nome");
-        console.log(nome);
-        console.log(nome.dataset);
-        console.log(nome.dataset.apelido);
-        console.log(nome.dataset.nasc);
+        let $btn = document.querySelector('#btn');
+        let $resp = document.querySelector('#resp')
+        
+
+        function alerta(event){
+
+           console.log(event.currentTarget)
+
+           alert('Fui clicado')
+           $resp.innerHTML = 'Fui clicado';
+        }
+
+        $btn.addEventListener('click',alerta);
+        
     </script>
     
 </body>
