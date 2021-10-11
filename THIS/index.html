@@ -16,6 +16,7 @@
 
         /* 1 Chamar o this diretamente no console nos traz o objeto global do contexto em que o javascript está executando.
            O "this" no devtools do chrome nos traz o objeto "window", no Node nos traz o objeto global*/
+           
         console.log(this)
         /* ------------------------------------------------------------------------ */
 
@@ -62,7 +63,34 @@
 
         console.log($pessoa.idade);
         $pessoa.aniversario();
-        console.log($pessoa.idade)
+        console.log($pessoa.idade);
+
+        /* --------------------------------------------------------------------- */
+
+        // 4 Nas Arrows functions
+
+        // CONTEXTO DE CRIAÇÃO: OBJETO
+         // MODO  ERRADO
+
+        const $arrowFunctions = {
+            prop: 150,
+            arrow : ()=>{console.log(this)}
+        }
+        console.log($arrowFunctions.arrow())
+
+        //  MODO CERTO
+        /* PARA QUE VC CONSIGA LIGAR O  "THIS" NUMA  ARROW FUNCTION A  UM OBEJTO  VC PRECISA COLOCAR  ELA DENTRO
+        DE UMA  OUTRA   FUNÇÃO */
+
+        const obj1 ={
+            elemento1 : "exemplo1",
+            arrow2: function(){
+                const f = (()=> this)()
+                console.log(f)
+            }
+        }
+
+        console.log((obj1.arrow2()))
         
         
 

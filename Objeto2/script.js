@@ -33,7 +33,7 @@ console.log(pessoa);
 pessoa.nomeComSobrenome();
  */
 
-let num = "nei";
+/* let num = "nei";
 function Teste(){
     if(num){
         booleano = true;
@@ -45,3 +45,42 @@ function Teste(){
 };
 
 Teste();
+ */
+
+
+function Pessoa(){
+    return {nome:"Claudinei", idade: 48}
+}
+
+let p1 = Pessoa();
+
+console.log(p1)
+
+let p2 = Pessoa()
+
+p2.nome= 'Mario';
+p2.idade = 50;
+
+console.log(p2);
+
+/* ------------------------------------ */
+function Pessoa2(){
+    return {
+        nome:"Milson",
+        idade: 36,
+        saudacao : function(){
+            return `Olá ${this.nome}`
+        }
+    }
+}
+
+let p3 = Pessoa2()
+console.log(p3)
+console.log((p3.saudacao()));
+
+let p4 = Pessoa2();
+p4.nome ="Rosemary";
+p4.idade = 60;
+
+console.log(p4);
+console.log(p4.saudacao());
