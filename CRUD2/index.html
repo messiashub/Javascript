@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CRUD</title>
+</head>
+<body>
+
+    <input type="hidden" id="form_index">
+    Nome Produto: <input type="text" placeholder="Nome Produto" id="form_nome">
+    Valor Produto: <input type="number" placeholder="Valor Produto" id="form_valor">
+    Qtd Produto: <input type="number" placeholder="Qtd Produto" id="form_qtd">
+    <button id="btn_salvar">Salvar</button>
+    <button id="btn_cancelar">Cancelar</button>
+
+    <br><br>
+    <table border="1">
+        <thead><!-- cabeçalho -->
+            <tr> <!-- linha -->
+                <th>Nome</th> <!-- célula de cabeçalho -->
+                <th>Valor</th>
+                <th>Qtd</th>
+                <th>Total</th>
+                <th>Ação</th>
+            </tr>
+             
+
+        </thead>
+        <tbody id="corpo_tabela"> <!-- corpo da tabela-->
+
+        </tbody>
+
+    </table>
+
+    <script src="crud.js"></script>
+    
+</body>
+</html>
