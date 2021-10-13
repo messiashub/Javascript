@@ -61,8 +61,27 @@ function ListProduto(){  // vai adicionar os item em um array
 
         let $produto = new ProdutoModel($nome,$valor,$qtd)
         list.add($produto);  // list vai adicionar 
+        updateTabela()
         resetForm();        // vai limpar os formulários
     }
+    
+    function updateTabela(){
+        let map = list.getItens().map(function(item,indice){
+            return '<tr>'+
+                    '<td>'+item.nome+'</td>' +
+                    '<td>'+item.valor+'</td>' +
+                    '<td>'+item.qtd+'</td>' +
+                    '<td>'+item.getTotal()+'</td>' +
+                    '<td>'+'<button>ação</button>'+'</td>' +
+                    '</tr>'
+        });
+        let bodyTabela = document.getElementById("corpo_tabela");
+        bodyTabela.innerHTML = map.join('');
+    }
+
+
+
+
     function resetForm(){    // vai limpar os campos do formulário
         let $index = document.querySelector('#form_index');
         let $nome = document.querySelector('#form_nome');

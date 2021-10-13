@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+
+    <script>
+
+        // PROGRAMAÇÃO ORIENTADA A OBEJTO
+        /* É O PROJETO (ESQUELETO DO OBEJTO) */
+
+        // 1 CRIANDO O ESQUELETO
+
+            function Carro(modelo,marca,cor){
+            this.modelo = modelo;
+            this.marca = marca;
+            this.cor = cor;
+            this.andar= function(){
+                return `O carro ${this.modelo} da ${this.marca} está andando!`
+            }
+        }
+
+        // 2 Instanciando
+
+        let $car = new Carro();
+        $car.modelo ="corsa";
+        $car.marca ="chevrolet";
+        $car.cor = "preto"
+        console.log($car);
+        console.log($car.andar())
+
+
+        let $car2 = new Carro();
+        $car2.modelo = "uno";
+        $car2.marca = "Fiat"
+        $car2.cor = "branco";
+        console.log($car2);
+        console.log($car2.andar())
+        
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
