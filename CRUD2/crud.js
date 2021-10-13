@@ -127,10 +127,6 @@ function ListProduto() {  // vai adicionar os item em um array
 
     }
 
-
-
-
-
     function resetForm() {    // vai limpar os campos do formulário
         let $index = document.querySelector('#form_index');
         let $nome = document.querySelector('#form_nome');
