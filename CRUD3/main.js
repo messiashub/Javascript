@@ -9,12 +9,12 @@ const closeModal = () => {
 }
    
 
-const $clienteTemporario={
+/* const $clienteTemporario={
     nome:"Nilda", 
     email:"NildadoSantosFurlanetti@hotmail.com",
     celular: "112613583390",
     cidade:"São Paulo"
-}
+} */
 
 
 const $pegueDoLocalStorage = ()=> JSON.parse(localStorage.getItem('db_cliente')) ?? [];
@@ -50,13 +50,37 @@ const $campoValido = function(){
     return document.querySelector('#form').reportValidity()
 
 }
-const $limparCampos = ()=>{ // 1 FUNÇÃO PARA LIMPAR OS CAMPOS
+const $limparCampos = ()=>{ 
     const $campos = document.querySelectorAll(".modal-field");
-
-    // para cada campo em campos retorne campo com o valor vazio
     $campos.forEach((campo)=> campo.value="")
 
 }
+const $criarLinha=(cliente)=>{ // 2 FUNÇÃO PARA CRIAR AS LINHAS
+    const $novaLinha =document.createElement('tr');
+    $novaLinha.innerHTML = `
+    <td>${cliente.nome}</td>
+    <td>${cliente.email}</td>
+    <td>${cliente.celular}</td>
+    <td>${cliente.cidade}</td>
+    <td>
+        <button type="button" class="button green">editar</button>
+        <button type="button" class="button red">excluir</button>
+    </td>
+    `
+    //  ADICIONANDO UM FILHO AO TBODY (TR)
+    document.querySelector("#tabelaCliente>tbody").appendChild($novaLinha);
+}
+
+const $limparTabela = () =>{ // 3 FUNÇÃO PARA LIMPAR A TABELA
+    const $linhas = document.querySelectorAll("#tabelaCliente>tbody>tr");
+    $linhas.forEach(linha => linha.parentNode.removeChild(linha))
+}
+const $updateTabela = ()=>{// 1 FUNÇÃO PARA LER OS DADOS DO LOCALSTORGE E PREENCHER NA TELA
+    const dbCliente = $lerCliente();
+    $limparTabela() // 3
+    dbCliente.forEach($criarLinha); // 2 PARA CADA CLIENTE CRIE UMA LINHA
+}
+$updateTabela() // 1
 
 const $salvarCliente = function(){ 
     if($campoValido()){  
@@ -67,7 +91,8 @@ const $salvarCliente = function(){
             cidade : document.getElementById('cidade').value,
         }
         $criarCliente($cliente) 
-        $limparCampos() // 1
+        $limparCampos() //* QUANDO SALVAR, LIMPA OS CAMPOS PRA NÃO SE REPETIREM
+        $updateTabela() //1 ATUALIZA
         closeModal()
         
     }   
@@ -80,4 +105,4 @@ document.getElementById('modalClose')
     .addEventListener('click', closeModal)
 
 document.querySelector('#salvar')
-    .addEventListener('click', $salvarCliente) // 1ª FUNÇÃ0
+    .addEventListener('click', $salvarCliente) 

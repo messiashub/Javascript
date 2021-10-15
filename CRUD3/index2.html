@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .btn{
+            padding: 4px 20px;
+            background-color:rgba(41, 240, 207, 0.808);
+            font-size: 1rem;
+            border-radius: 5px;
+            outline-style:none;
+           
+            
+            border-style: none;
+        }
+    </style>
+<body>
+    <h1>Testes</h1>
+    <script>
+
+        const $h2 = document.createElement('h2');
+        $h2.innerHTML=`Criei o h2 dinamicamente`;
+
+        document.querySelector("body").appendChild($h2);
+
+        const $div = document.createElement('div');
+        $div.innerHTML =`<button class="btn">Click</button>`
+        document.querySelector("body").appendChild($div);
+
+    </script>
+</body>
+</html>
