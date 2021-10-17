@@ -115,8 +115,7 @@ const $editarDeletar = function(event){
         }else{
             console.log('deletando o cliente')
         }     
-    }   
-    
+    }      
 }
 $updateTabela()
 
