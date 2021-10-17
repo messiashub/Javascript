@@ -26,11 +26,11 @@ const $enviarParaLocalStorage = (dbCliente)=> localStorage.setItem("db_cliente",
 // delete
 const $deleteCliente = (index)=>{
     const dbCliente = $lerCliente();
-    dbCliente.splice(index,1);  // a partir do indice delete 1
+    dbCliente.splice(index,1);  
     $enviarParaLocalStorage(dbCliente);
 }
 //update - ataulizar
-const $updateCliente = (index, cliente)=>{ // vai receber o indice que vai ser atualizado
+const $updateCliente = (index, cliente)=>{ 
     const dbCliente = $lerCliente();
     dbCliente[index] = cliente;
     $enviarParaLocalStorage(dbCliente);
@@ -45,7 +45,6 @@ const $criarCliente =function(cliente){
     $enviarParaLocalStorage(dbCliente)   
 }
 
-// VINCULANDO AO HTML
 const $campoValido = function(){ 
     return document.querySelector('#form').reportValidity()
 
@@ -55,32 +54,32 @@ const $limparCampos = ()=>{
     $campos.forEach((campo)=> campo.value="")
 
 }
-const $criarLinha=(cliente)=>{ // 2 FUNÇÃO PARA CRIAR AS LINHAS
+const $criarLinha=(cliente,indice)=>{ // 1.1 PEGANDO O INDICE DA LINHA
     const $novaLinha =document.createElement('tr');
     $novaLinha.innerHTML = `
     <td>${cliente.nome}</td>
     <td>${cliente.email}</td>
     <td>${cliente.celular}</td>
     <td>${cliente.cidade}</td>
-    <td>
-        <button type="button" class="button green">editar</button>
-        <button type="button" class="button red">excluir</button>
+    <td>                                                     
+        <button type="button" class="button green" id="editar-${indice}">Editar</button>
+        <button type="button" class="button red" id="deletar-${indice}">Excluir</button>
     </td>
     `
-    //  ADICIONANDO UM FILHO AO TBODY (TR)
+   
     document.querySelector("#tabelaCliente>tbody").appendChild($novaLinha);
 }
 
-const $limparTabela = () =>{ // 3 FUNÇÃO PARA LIMPAR A TABELA
+const $limparTabela = () =>{ 
     const $linhas = document.querySelectorAll("#tabelaCliente>tbody>tr");
     $linhas.forEach(linha => linha.parentNode.removeChild(linha))
 }
-const $updateTabela = ()=>{// 1 FUNÇÃO PARA LER OS DADOS DO LOCALSTORGE E PREENCHER NA TELA
+const $updateTabela = ()=>{
     const dbCliente = $lerCliente();
-    $limparTabela() // 3
-    dbCliente.forEach($criarLinha); // 2 PARA CADA CLIENTE CRIE UMA LINHA
+    $limparTabela() 
+    dbCliente.forEach($criarLinha);
 }
-$updateTabela() // 1
+$updateTabela() 
 
 const $salvarCliente = function(){ 
     if($campoValido()){  
@@ -91,18 +90,45 @@ const $salvarCliente = function(){
             cidade : document.getElementById('cidade').value,
         }
         $criarCliente($cliente) 
-        $limparCampos() //* QUANDO SALVAR, LIMPA OS CAMPOS PRA NÃO SE REPETIREM
-        $updateTabela() //1 ATUALIZA
+        $limparCampos() 
+        $updateTabela() 
         closeModal()
         
     }   
 }
+
+// 1 EDITAR E  DELETAR CLIENTE
+
+const $editeCliente = function(indice){ // 3 PEGANDO SOMENTE O CLIENTE QUE VAI SER EDITADO
+    const $cliente = $lerCliente()[indice] // 3 COMO $lerCliente é um array, pego somente o "indice"
+    console.log($cliente)
+
+}
+const $editarDeletar = function(event){
+    if(event.target.type == "button"){  // 1 PEGANDO O ALVO QUE TEM O TIPO "TYPE"
+        const [action, indice]= event.target.id.split("-") // 2
+       /*  console.log(action,indice) */
+
+       if(action == "editar"){ 
+            $editeCliente(indice)
+
+        }else{
+            console.log('deletando o cliente')
+        }     
+    }   
+    
+}
+$updateTabela()
+
 // Eventos
 document.getElementById('cadastrarCliente')
-    .addEventListener('click', openModal)
+    .addEventListener('click', openModal);
 
 document.getElementById('modalClose')
-    .addEventListener('click', closeModal)
+    .addEventListener('click', closeModal);
 
 document.querySelector('#salvar')
-    .addEventListener('click', $salvarCliente) 
+    .addEventListener('click', $salvarCliente); 
+
+document.querySelector("#tabelaCliente>tbody")
+    .addEventListener('click',$editarDeletar);// 1
