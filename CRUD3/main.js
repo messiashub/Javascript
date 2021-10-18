@@ -2,6 +2,7 @@
 
 const openModal = () => document.getElementById('modal')
     .classList.add('active')
+   
 
 const closeModal = () => {
     $limparCampos();
@@ -89,18 +90,21 @@ const $salvarCliente = function () {
             celular: document.getElementById('celular').value,
             cidade: document.getElementById('cidade').value,
         }
-        const $indice = document.querySelector("#nome").dataset.index;
-        if ($indice == "new") {
+
+        // SALVAR OU EDITAR
+        const $indice = document.getElementById("nome").dataset.index;
+        if ($indice == "new") { // SE FOR IGUAL FAÇA ISSO
             $criarCliente($cliente)
             $limparCampos()
             $updateTabela()
             closeModal()
-        }else{
-            console.log('editar')
+
+        } else {        // SE NÃO, FAÇA ISSO
+            $updateCliente($indice, $cliente)
+            $updateTabela()
+            closeModal()
+            location.reload() // RECARREGA A PÁGINA
         }
-
-
-
 
     }
 }
@@ -113,26 +117,32 @@ const $preencherCampos = function ($cliente) {
     document.querySelector("#email").value = $cliente.email
     document.querySelector("#celular").value = $cliente.celular
     document.querySelector("#cidade").value = $cliente.cidade
-
+    document.querySelector("#nome").dataset.index = $cliente.index // ADICIONANDO MAIS UM DADO
 }
 
 const $editeCliente = function (indice) {
     const $cliente = $lerCliente()[indice]
-    /* console.log($cliente) */
-    $preencherCampos($cliente); // 1 $preencherCampos recebe o $cliente
-    openModal();//1 QUANDO CLICAR EM $editeCliente vai abrir o modal
+    $cliente.index = indice
 
+    $preencherCampos($cliente); // 1 $preencherCampos recebe o $cliente 
+    openModal();//1 QUANDO CLICAR EM $editeCliente vai abrir o modal
+   
 }
+
 const $editarDeletar = function (event) {
     if (event.target.type == "button") {
         const [action, indice] = event.target.id.split("-")
-
 
         if (action == "editar") {
             $editeCliente(indice)
 
         } else {
-            console.log('deletando o cliente')
+            const $cliente = $lerCliente()[indice]
+            const $response = confirm(`Deseja realmente excluir o cliente ${$cliente.nome} ?`)
+            if ($response) {
+                $deleteCliente(indice)
+                $updateTabela()
+            }
         }
     }
 }
